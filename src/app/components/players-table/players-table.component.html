@@ -1,0 +1,29 @@
+<table class="table table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Position</th>
+        <th>Number</th>
+        <th>image</th>
+
+        <th>Actions</th>
+    </tr>
+
+    <tr *ngFor="let p of pageOfItems">
+        <td>{{p._id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.age}}</td>
+        <td>{{p.position}}</td>
+        <td>{{p.number}}</td>
+        <td><img [src]="p.img" alt="" width="100px" height="100px"></td>
+        <td>
+            <button class="btn btn-info" (click)="displayPlayer(p._id)">Display</button>
+            <button class="btn btn-warning" (click)="editPlayer(p._id)">Edit</button>
+            <button class="btn btn-danger" (click)="deletePlayer(p._id)">Delete</button>
+        </td>
+    </tr>
+</table>
+<div class="card-footer pb-0 pt-3">
+    <jw-pagination [items]="players" (changePage)="onChangePage($event)" [pageSize]="5"></jw-pagination>
+</div>

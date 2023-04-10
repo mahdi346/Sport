@@ -1,0 +1,22 @@
+<app-banner title="Data"></app-banner>
+<div class="container">
+    <table class="table table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    
+        <tr *ngFor="let d of data">
+            <td>{{d.id}}</td>
+            <td>{{d.name}}</td>
+            <td>
+                <input type="checkbox" name="" id="checkbox">
+
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-warning"  (click)="validate()">Validate</button>
+
+</div>
+
